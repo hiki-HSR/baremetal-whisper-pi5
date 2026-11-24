@@ -1,0 +1,34 @@
+# Build outputs
+*.o
+*.d
+*.elf
+*.img
+*.lst
+*.map
+*.log
+*.a
+
+# Whisper models and audio
+*.bin
+*.BIN
+*.wav
+*.WAV
+*.pcm
+*.PCM
+
+# Results / temporary files
+result.txt
+test.txt
+*.json
+*.tmp
+
+# Local backups
+backup/
+*.before-*
+kernel.cpp.model-init-success
+kernel.cpp.before*
+Makefile.before*
+
+# Keep compatibility source files
+!ggml-build/*.c
+!ggml-build/*.cpp
