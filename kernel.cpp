@@ -226,6 +226,11 @@ CStdlibApp::TShutdownMode CKernel::Run(void)
                   << std::endl;
     }
 
+    // MK2 profiling: internal Whisper stage timings
+    std::cout << "[MK2] Whisper internal timings:"
+              << std::endl;
+    whisper_print_timings(ctx);
+
     if (result != 0) {
         std::cout << "[FAIL] Whisper inference: "
                   << result << std::endl;
