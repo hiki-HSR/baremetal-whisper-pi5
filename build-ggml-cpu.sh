@@ -8,7 +8,7 @@ OUT="$PWD/ggml-build"
 mkdir -p "$OUT"
 
 COMMON=(
-  -O2 -nostdinc
+  -O3 -nostdinc
   -mcpu=cortex-a76 -mlittle-endian
   -D_GNU_SOURCE
   -D_POSIX_C_SOURCE=200809L

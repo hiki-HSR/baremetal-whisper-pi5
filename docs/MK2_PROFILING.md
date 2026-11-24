@@ -59,3 +59,32 @@ Measurements:
 - No new crashes or deadlocks
 - Performance measured repeatedly
 - Improvement demonstrated under matching conditions
+
+## MK2-O3 Experiment
+
+Hardware: Raspberry Pi 5
+Runtime: Circle bare metal
+Model: Whisper Tiny
+Input: Korean PCM, 16 kHz, 5 seconds
+Threads: 1
+
+### Compiler modification
+
+ggml CPU backend:
+- Before: -O2 -mcpu=cortex-a76
+- After:  -O3 -mcpu=cortex-a76
+
+### Observed results
+
+| Metric | MK2-O2 | MK2-O3 |
+|---|---:|---:|
+| Inference | 9809 ms | 5006 ms |
+| Encoder | 9135.10 ms | 4484.59 ms |
+| Decoder | 362.93 ms | 257.84 ms |
+| Mel | 44.27 ms | 31.27 ms |
+| RTF | 1.961 | 1.001 |
+
+Observed inference-time reduction: 48.97%.
+
+Note: These values are from individual runs.
+Repeated measurements and output-text verification are pending.
